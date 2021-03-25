@@ -2,16 +2,13 @@ package zoo.managers;
 
 import zoo.entities.ZooEntities;
 
-import javax.ws.rs.core.Response;
+import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 
 public class ZooManagers {
     private ArrayList<ZooEntities> zooEntities = new ArrayList<>();
 
-    private int id = 0;
-    static String name;
-    static String type;
-    static int age;
+    private int num = 0;
 
     public ArrayList<ZooEntities> getAll() {
         return zooEntities;
@@ -32,10 +29,7 @@ public class ZooManagers {
             zooEntities.add(post);
         }
     }
-
-    public void delete() {
-        if (zooEntities.get(id) != null) {
-            zooEntities.remove(id);
-        }
+    public void delete(int id) {
+        zooEntities.remove(id);
     }
 }
