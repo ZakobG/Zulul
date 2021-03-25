@@ -2,10 +2,10 @@ package zoo.entities;
 
 public class ZooEntities {
 
-    private int id;
-    private String type;
-    private String name;
-    private int age;
+    public int id;
+    public String type;
+    public String name;
+    public int age;
 
     public int getId() {
         return id;
