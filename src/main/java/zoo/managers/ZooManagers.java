@@ -1,10 +1,10 @@
 package zoo.managers;
 
 import zoo.entities.ZooEntities;
-
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 
+@ApplicationScoped
 public class ZooManagers {
     private ArrayList<ZooEntities> zooEntities = new ArrayList<>();
 
@@ -14,19 +14,18 @@ public class ZooManagers {
         return zooEntities;
     }
 
-    public void get() {
-        if (zooEntities.get(id) != null) {
-            Response.ok(zooEntities.get(id)).build();
-        } else {
-            Response.ok("Zvíře není.").build();
-        }
+    public ZooEntities get(int id) {
+        return zooEntities.get(id);
     }
 
-    public void create(ZooEntities post) {
-        if (name != null && type != null && zooEntities.get(age) != null) {
-            post.setId(id);
-            id++;
+    public String create(ZooEntities post) {
+        if (!post.name.equals(null) && !post.type.equals(null) && post.age != 0) {
+            post.id = num;
             zooEntities.add(post);
+            num++;
+            return "oki";
+        } else {
+            return "neni oki";
         }
     }
     public void delete(int id) {
