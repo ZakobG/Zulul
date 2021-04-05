@@ -95,7 +95,7 @@ public class ZooManagers {
                 return "lol funguje to";
             }
         }
-        return "nejsi retard a nefunguje to lol";
+        return "ne jsi retard a nefunguje to lol";
     }
     public String logout(){
      user = null;
