@@ -6,6 +6,7 @@ public class ZooEntities {
     public String type;
     public String name;
     public int age;
+    public boolean status;
 
     public int getId() {
         return id;
